@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .toggle {
+        width: 100px;
+        height: 50px;
+        background-color: lightgray;
+        border-radius: 50px;
+        position: relative;
+        margin-top: 30px;
+      }
+
+      .circle {
+        width: 40px;
+        height: 40px;
+        background-color: lightgreen;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        transition: 0.5s;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".box").css({
+          width: 300,
+          height: 300,
+          backgroundColor: "teal",
+        });
+
+        // $(".box").mousemove(function () {
+        //   $(".box").css({
+        //     backgroundColor: "salmon",
+        //   });
+        // });
+        // =>엘리먼트 내부에서 마우스가 움직였을 때 실행됨
+
+        // $(".box").mouseenter(function () {
+        //   $(".box").css({
+        //     width: 500,
+        //   });
+        // });
+        // => 엘리먼트에 마우스를 올렸을 때
+        // $(".box").mouseleave(function () {
+        //   $(".box").css({
+        //     width: 300,
+        //   });
+        // });
+        // => 엘리먼트에서 마우스를 치웠을 때
+
+        // $(".box").hover(
+        //   function () {
+        //     $(".box").css({
+        //       backgroundColor: "gold",
+        //     });
+        //   },
+        //   function () {
+        //     $(".box").css({
+        //       backgroundColor: "teal",
+        //     });
+        //   }
+        // );
+
+        // $(".box").mousedown(function () {
+        //   $(".box").css({
+        //     width: 500,
+        //     backgroundColor: "salmon",
+        //   });
+        // });
+        // // => 엘리먼트에 마우스를 눌렀을 때 실행
+
+        // $(".box").mouseup(function () {
+        //   $(".box").css({
+        //     width: 500,
+        //     backgroundColor: "royalBlue",
+        //   });
+        // });
+        // => 엘리먼트에서 마우스뺐을때
+
+        // $(".box").click(function () {
+        //   $(".box").css({
+        //     width: 500,
+        //   });
+        //   // => 마우스 눌렸다 때야 실행
+        // });
+
+        // $(".box").dblclick(function () {
+        //   $(".box").css({
+        //     backgroundColor: "gold",
+        //     transition: "1s",
+        //   });
+        // });
+        // => 더블클릭
+
+        // $(".box").click(function () {
+        //   $(this).css({
+        //     width: 500,
+        //     height: 500,
+        //   });
+        // });
+        // => this를 사용하여 앞서 선택한 선택자를 선택할 수 있음
+
+        var num = 0;
+
+        $(".box").click(function () {
+          if (num === 0) {
+            $(".box").css({
+              backgroundColor: "salmon",
+            });
+            num++;
+          } else if (num === 1) {
+            $(".box").css({
+              backgroundColor: "teal",
+            });
+            num--;
+          }
+        });
+
+        var toggleNum = 0;
+
+        $(".toggle").click(function () {
+          if (toggleNum === 0) {
+            $(".circle").css({
+              left: 55,
+            });
+            toggleNum++;
+          } else if (toggleNum === 1) {
+            $(".circle").css({
+              left: 5,
+            });
+            toggleNum--;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <div class="toggle">
+      <div class="circle"></div>
+    </div>
+  </body>
+
+  <!-- *event
+  $("선택자").이벤트명(function(){
+    속성: 속성값
+  }) -->
+</html>

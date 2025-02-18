@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="/jquery-3.7.1.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // *css
+        // => 선택자를 선택하고, css 속성을 넣어주면 됨.
+        // => css 내부에 오브젝트(객체)를 씀.
+        // => 기존 css 동일하게 사용할 수 있음.
+        // => 기본 단위는 px단위로 생략가능
+        // => 단위는 문자열이고 숫자나 변수를 연결할 땐 + 연결연산자로 연결 가능
+
+        var globalWidth = 300;
+        var colors = ["salmon", "gold", "teal"];
+
+        $(".box").css({
+          width: "300px",
+          height: "300px",
+          backgroundColor: "salmon",
+        });
+
+        $(".box:nth-child(2)").css({
+          backgroundColor: "teal",
+        });
+
+        $(".box:nth-child(3)").css({
+          backgroundColor: "gold",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+</html>
+
+<!-- *제이쿼리
+=> 자바스크립트 라이브러리
+=> 복잡한 자바스크립트 코드를 짧게 작성하여 보다 쉽게 표현할 수 있다 
+=> 속도가 느리고 관리측에서 좋지 못함 등 단점이 있음  -->
+
+<!-- * 자바 스크립트와 제이쿼리 차이점
+=> 제이쿼리로 쉽게 작업할 수 있지만 작업하는데 한계가 있음 
+=> 자바스크립트로 거의 모든 작업을 할 수 있음 대신 코드의 양이 많음  -->
+<!-- 
+*제이쿼리 사용
+1. 제이쿼리 사이트 가서 cdn 또는 파일을 받아서 연결하기
+2. head태그에 <script src="경로"></script> 연결하기
+3. 새로운 script태그 열어서 제이쿼리 코드 작성 
+$(document).ready(function () {
+
+}) -->
