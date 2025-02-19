@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("li")
+          .each(function (num) {
+            $(this).attr({
+              "data-index": `${num}`,
+            });
+          })
+          .click(function () {
+            var result = $(this).attr("data-index");
+            // => 클릭한 선택자의 속성값을 얻어옴
+            console.log(result);
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </body>
+</html>

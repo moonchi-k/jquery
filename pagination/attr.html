@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: teal;
+        border: 1px solid #808080;
+      }
+
+      .box[data-color="bgcolor"] {
+        background-color: gold;
+      }
+
+      /* *data-xx */
+      /* => 선택자 외 data속성을 사용하여 엘리먼트를 선택할 수 있음  */
+      /* => data값에 정보를 저장하여 스크립트에 정보를 넘겨줄 수 있음 */
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("img").click(function () {
+          $(this).attr({
+            src: "https://media.istockphoto.com/id/887755698/photo/watercolor-textured-background.jpg?b=1&s=612x612&w=0&k=20&c=RMe2NgiFSdeBu0xIw6G2XlVu7v25BytPCIH6hq9c0BM=",
+            alt: "bg img",
+            width: 300,
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <img
+      src="https://thumbs.dreamstime.com/b/grainy-fall-background-abstract-pastel-colors-bright-gradient-noise-effect-texture-illustration-ai-generated-333103026.jpg"
+    />
+    <div class="box"></div>
+    <div class="box" data-color="bgcolor"></div>
+  </body>
+</html>
